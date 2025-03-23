@@ -23,7 +23,7 @@
             <p class="mt-2">Una buena alimentación es clave. Prioriza carbohidratos saludables, proteínas magras y grasas buenas. La hidratación también es esencial.</p>
         </section>
         
-        <section class="bg-white shadow-lg rounded-lg p-6">
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
             <h2 class="text-2xl font-semibold text-blue-600">💪 Consejos</h2>
             <ul class="list-disc list-inside mt-2">
                 <li>Usa zapatillas adecuadas para tu tipo de pisada.</li>
@@ -31,10 +31,38 @@
                 <li>Escucha a tu cuerpo y adapta el entrenamiento si es necesario.</li>
             </ul>
         </section>
+
+        <section class="bg-white shadow-lg rounded-lg p-6 mb-6">
+            <h2 class="text-2xl font-semibold text-blue-600">📅 Próximas Maratones</h2>
+            <button onclick="mostrarMaratones()" class="mt-3 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Ver maratones</button>
+            <ul id="lista-maratones" class="list-disc list-inside mt-4 hidden"></ul>
+        </section>
     </main>
     
     <footer class="bg-blue-600 text-white text-center py-4 mt-6">
         <p>&copy; 2025 Guía para Maratonianos - Todos los derechos reservados</p>
     </footer>
+
+    <script>
+        function mostrarMaratones() {
+            const maratones = [
+                "Maratón de Boston - 15 de abril",
+                "Maratón de Londres - 21 de abril",
+                "Maratón de Berlín - 29 de septiembre",
+                "Maratón de Nueva York - 3 de noviembre"
+            ];
+            
+            const lista = document.getElementById("lista-maratones");
+            lista.innerHTML = "";
+            maratones.forEach(maraton => {
+                const li = document.createElement("li");
+                li.textContent = maraton;
+                lista.appendChild(li);
+            });
+            
+            lista.classList.toggle("hidden");
+        }
+    </script>
 </body>
 </html>
+
